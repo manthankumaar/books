@@ -1,10 +1,10 @@
 import React from 'react'
-import { useState, useContext } from 'react'
-import BooksContext from '../Context/Books'
+import { useState } from 'react'
+import useBooksContext from '../use-book-context'
 
 export const BookEdit = ({ book, onSubmit }) => {
   const [newTitle, setNewTitle] = useState(book.title)
-  const { editBookById } = useContext(BooksContext)
+  const { editBookById } = useBooksContext()
 
   const handleSave = (event) => {
     event.preventDefault()
